@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Aesthetic Portfolio</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
+            line-height: 1.6;
+            padding: 0 20px;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #4b0082;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #6a5acd;
+            margin-top: 10px;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 1s;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #6a5acd;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4b0082;
+            text-decoration: underline;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #4b0082;
+            margin-bottom: 20px;
+        }
+
+        .biodata {
+            margin-top: 20px;
+        }
+
+        .biodata dt {
+            font-weight: bold;
+            color: #4b0082;
+        }
+
+        .biodata dd {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            background: #f8f8ff;
+            border: 2px solid #dcdcdc;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .project h3 {
+            margin-top: 15px;
+            color: #6a5acd;
+        }
+
+        .social-media ul {
+            list-style: none;
+            margin: 10px 0;
+            padding: 0;
+        }
+
+        .social-media li {
+            margin: 5px 0;
+        }
+
+        .social-media a {
+            color: #4b0082;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #6a5acd;
+            text-decoration: underline;
+        }
+
+        .random-things {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .random-things ul {
+            list-style: none;
+            margin: 10px 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .random-things li {
+            text-align: center;
+        }
+
+        .random-things img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin: 50px 0;
+            padding: 20px;
+            background: #4b0082;
+            color: #fff;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 3s;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        .welcome-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #4b0082, #6a5acd);
+            color: white;
+            text-align: center;
+            animation: fadeIn 2s forwards;
+        }
+
+        .welcome-screen img {
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .welcome-screen button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #fff;
+            color: #4b0082;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .welcome-screen button:hover {
+            background: #dcdcdc;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #main-content {
+            display: none;
+        }
+
+    </style>
+    <script>
+        function enterPortfolio() {
+            document.querySelector('.welcome-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="welcome-screen">
+        <div>
+            <img src="img/widiaaaa.jpg" alt="Profile Picture">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Click below to explore more about me.</p>
+            <button onclick="enterPortfolio()">Enter</button>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <header>
+            <h1>Welcome to My Portfolio</h1>
+            <nav>
+                <a href="#about">About Me</a>
+                <a href="#sosmed">Social Media</a>
+                <a href="#random ">Random Things</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hi! Nama saya Widia Sulistiani, seorang mahasiswa berusia 19 tahun 
+                yang saat ini sedang menempuh jenjang S1 di program studi Teknik Informatika. 
+                Saya memiliki semangat tinggi untuk mengeksplorasi dunia teknologi, 
+                khususnya dalam bidang pengembangan perangkat lunak dan inovasi digital. 
+            </p>
+            <dl class="biodata">
+                <dt>Nama Lengkap:</dt>
+                <dd>Widia Sulistiani</dd>
+
+                <dt>Tanggal Lahir:</dt>
+                <dd>12 Desember 2005</dd>
+
+                <dt>Pendidikan Terakhir:</dt>
+                <dd>SMKN 3 Kuningan</dd>
+
+                <dt>Hobi:</dt>
+                <dd>Menonton Drakor</dd>
+            </dl>
+        </section>
+
+        <section id="projects">
+            <h2>Social Media</h2>
+            <div class="projects">
+                <div class="project">
+                    <img src="img/instagram.jpg" alt="Instagram">
+                    <h3>Instagram</h3>
+                    <p>Follow me on Instagram for more updates and creative posts.</p>
+                    <a href="#">Visit Instagram</a>
+                </div>
+                <div class="project">
+                    <img src="img/TIKTOK.png" alt="TikTok">
+                    <h3>TikTok</h3>
+                    <p>Check out my TikTok for fun and creative videos!</p>
+                    <a href="#">Visit TikTok</a>
+                </div>
+            </div>
+        </section>
+<div class="random-things">
+            <h3>Things I Love</h3>
+            <ul>
+                <li>
+                    <img src="img/Matcha.jpg" alt="Matcha">
+                    <p>Matcha</p>
+                </li>
+                <li>
+                    <img src="img/Beben.jpg" alt="Beben">
+                    <p>Beben</p>
+                </li>
+                <li>
+                    <img src="img/Seblak.jpg" alt="Seblak">
+                    <p>Seblak</p>
+                </li>
+            </ul>
+        </div>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>
+                Feel free to reach out for collaborations or just a friendly chat!
+            </p>
+            <p>Email: <a href="mailto:widiasulistiani0@gmail.com">widiasulistiani0@gmail.com</a></p>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Widia. All rights reserved.</p>
+        </footer>
+
+    </div>
+</body>
+</html> 
